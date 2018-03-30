@@ -1,2 +1,2 @@
-# Ecotour
-ecotour
+# Colleges
+colleges

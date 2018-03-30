@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //app.get('/javascripts/bundle.js', browserify('./client/script.js'));
-var dbConnectionStr = 'mongodb://localhost:27017/ecotour2018';
+var dbConnectionStr = 'mongodb://localhost:27017/colleges2018';
 mongoose.connect(dbConnectionStr);
 
 if (app.get('env') == 'development') {
