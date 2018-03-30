@@ -1,0 +1,88 @@
+<form action="" method="POST" class="form-horizontal" role="form">
+    <div class="form-group col-md-8">
+        <legend class="col-md-4">Реєстрація учасника</legend>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="username" class="control-label col-md-4">
+            Як до Вас звертатися?
+        </label>
+        <div class="form-group col-md-6">
+            <select class="form-control">
+                <option>Mr</option>
+                <option>Ms</option>
+                <option>Mrs</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="name" class="control-label col-md-4">
+            Прізвище та ім'я
+        </label>
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" placeholder="Марк Твен" id="name" required="required">
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="company" class="control-label col-md-4">
+            Компанія (навчальний заклад)
+        </label>
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" placeholder="Google inc" id="company" required="required">
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="email" class="control-label col-md-4">
+            E-mail
+        </label>
+        <div class="form-group col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                </div>
+                <input type="email" name="email" id="email" class="form-control" placeholder="valve@gmail.com" required="required">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="job" class="control-label col-md-4">
+            Посада
+        </label>
+        <div class="form-group col-md-6">
+            <input class="form-control" type="text" placeholder="директор" id="job" required="required">
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="city" class="control-label col-md-4">
+            Місто
+        </label>
+        <div class="form-group col-md-6">
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                </div>
+                <input type="text" name="city" id="city" class="form-control" placeholder="Київ" required="required">
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <label for="question" class="control-label col-md-4">
+            Як нам зробити конференцію цікавіше?
+        </label>
+        <div class="form-group col-md-6">
+            <textarea name="question" id="question" class="form-control" rows=" 3" required="required"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group col-md-8">
+        <div>
+            <button type="submit" class="btn btn-primary">Відправити</button>
+        </div>
+    </div>
+</form>
