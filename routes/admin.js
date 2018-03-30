@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var College = require('../models/college');
+var Country = require('../models/country');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -11,49 +11,49 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/colleges', function(req, res, next) {
-    College.find({}, function(err, colleges) {
+router.get('/countries', function(req, res, next) {
+    Country.find({}, function(err, countries) {
         if (err) {
             console.error('Error: ' + err);
-            res.render('admin/college-res', {
+            res.render('admin/country-res', {
                 title: 'Error І',
                 message: err
             });
         } else {
-            res.render('admin/colleges', {
+            res.render('admin/countries', {
                 layout: 'admin/layout',
-                title: 'Add college',
-                colleges: colleges
+                title: 'Add country',
+                countries: countries
             });
         }
     });
 });
 
-router.get('/college-add', function(req, res, next) { //Додати коледж    
-    res.render('admin/college-add', {
+router.get('/countries-add', function(req, res, next) { //Додати країну    
+    res.render('admin/countries-add', {
         layout: 'admin/layout',
-        title: 'Add college'
+        title: 'Add country'
     });
 });
 
-router.post('/college-add', function(req, res) { //Результат додавання коледж
-    College.remove({ Name: req.body.collegeName }, function(err) {
+router.post('/countries-add', function(req, res) { //Результат додавання країни
+    Country.remove({ Name: req.body.countryName }, function(err) {
         if (err) {
             console.error(err);
-            res.render('admin/college-res', { title: 'Error', message: err });
+            res.render('admin/country-res', { title: 'Error', message: err });
         } else {
             Country.create({
-                Name: req.body.CollegeName,
-                Desc: req.body.collegeDescription,
+                Name: req.body.CountryName,
+                Desc: req.body.countryDescription,
                 Image: req.body.imageURL,
-            }, function(err, college) {
+            }, function(err, country) {
                 if (err) {
                     console.error('Error: ' + err);
-                    res.render('admin/college-res', { title: 'Error І', message: err });
+                    res.render('admin/country-res', { title: 'Error І', message: err });
                 } else
-                    res.render('admin/college-res', {
+                    res.render('admin/country-res', {
                         title: 'Super: ',
-                        message: 'College added to DB succesfully'
+                        message: 'Country added to DB succesfully'
                     });
             });
         }

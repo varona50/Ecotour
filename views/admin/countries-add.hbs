@@ -1,0 +1,32 @@
+<form method="POST" class="form-horizontal" role="form">
+        <div class="form-group col-md-8">
+        <legend class="col-md-3">{{title}}</legend>
+        </div>
+
+        <div class="form-group col-md-8">
+            <label for="CountryName" class="control-label col-md-3">Country:</label>
+            <div class="form-group col-md-6">
+            <input type="text" name="CountryName" id="CountryName" class="form-control" required>
+            </div>
+        </div>
+
+        <div class="form-group col-md-8">
+            <label for="countryDescription" class="control-label col-md-3">Description:</label>
+            <div class="form-group col-md-6">
+            <textarea name="countryDescription" id="countryDescription" cols="5" rows="5" class="form-control"></textarea>                                    
+            </div>            
+        </div>
+
+        <div class="form-group col-md-8">
+            <label for="imageURL" class="control-label col-md-3">imageURL:</label>
+            <div class="form-group col-md-6">
+            <input name="imageURL" id="imageURL" class="form-control" type="url"></input>                                    
+            </div>            
+        </div>
+
+        <div class="form-group col-md-8">
+            <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+</form>
