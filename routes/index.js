@@ -6,21 +6,22 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Express' });
 });
 
-
 /* GET countries page. */
 router.get('/countries', function(req, res, next) {
-    Country.find(function(err, countries) {
-        if (err) return console.err(err);
-        res.render('countries', { title: 'Країни', countries: countries });
-    });
+    res.render('countries', { title: 'Ajax Demo', layout: 'layout1' });
+    // Country.find(function(err, countries) {
+    //     if (err) return console.err(err);
+    //     res.render('countries', { title: 'Країни', countries: countries });
 
-    /* Country.find()
-         .then(function(countries) {
-             res.render('countries', { title: 'Express2', countries: countries });
-         })
-         .catch(next)
-         .error(console.error);*/
 });
+
+/* Country.find()
+     .then(function(countries) {
+         res.render('countries', { title: 'Express2', countries: countries });
+     })
+     .catch(next)
+     .error(console.error);*/
+//});
 
 router.get("/setup-db", function(req, res) {
 

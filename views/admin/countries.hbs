@@ -1,3 +1,5 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+
 <a href="/admin/countries-add">Add Country</a>
 <table class="table table-bordered">    
     <thead>
@@ -8,9 +10,9 @@
     <tbody>
 {{#each countries}}
 <tr>    
-    <td>{{Name}}</td>
-    <td>{{Desc}}</td>
-    <td>{{Image}}</td>
+    <td> <div id="tableOfAdd">{{Name}} </div> </td>
+    <td> <div id="tableOfAdd">{{Desc}} </div> </td>
+    <td> <div id="tableOfAdd">{{Image}} </div> </td>
 </tr>
 {{/each}}
 </tbody>
