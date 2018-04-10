@@ -7,10 +7,20 @@ a {
     color: #00B7FF;
 }
 
-td {
-    width: 300;
+p {
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
 }
 
-.control-label col-md-4 {
-    text-align: left;
+h3 {
+    text-align: center;
+}
+
+td {
+    width: 150;
+}
+
+th {
+    text-align: center;
 }

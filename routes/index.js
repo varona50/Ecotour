@@ -9,19 +9,7 @@ router.get('/', function(req, res, next) {
 /* GET countries page. */
 router.get('/countries', function(req, res, next) {
     res.render('countries', { title: 'Ajax Demo', layout: 'layout1' });
-    // Country.find(function(err, countries) {
-    //     if (err) return console.err(err);
-    //     res.render('countries', { title: 'Країни', countries: countries });
-
 });
-
-/* Country.find()
-     .then(function(countries) {
-         res.render('countries', { title: 'Express2', countries: countries });
-     })
-     .catch(next)
-     .error(console.error);*/
-//});
 
 router.get("/setup-db", function(req, res) {
     var countries = [{
@@ -60,27 +48,63 @@ router.get("/setup-db", function(req, res) {
         if (err) {
             console.error(err);
         } else {
-
             for (let i = 0; i < countries.length; i++) {
-                Country.create(countries[i], function(err, country) {
-                    if (err) console.error('Error: ' + err);
-                    else console.log();
+                Country.create(countries[i], function(err, c) {
+                    if (err)
+                        console.error('Error:' + err);
+                    else
+                        console.log(c);
                 });
-            }
-        }
-    });
-    res.status(200).json({
-        message: "Okey",
+            };
+
+        };
     });
 
+    res.status(200).json({
+        message: "Okay",
+    });
 });
+
 /* GET prices page. */
 router.get('/prices', function(req, res, next) {
-    res.render('prices', { title: 'Prices' });
+    res.render('prices', { title: 'Express3' });
 });
+
 /* GET contacts page. */
 router.get('/contacts', function(req, res, next) {
-    res.render('contacts', { title: 'Contacts' });
+    res.render('contacts', { title: 'Contacts Us' });
+});
+
+router.post('/contacts', function(req, res, next) {
+    //відправка листа //експериментувати з полем TO. дві адреси.
+    var message = {
+        from: req.body.email,
+        to: 'mrakus30@gmail.com',
+        subject: 'Message from Ecotour [' + req.body.name + ']',
+        text: req.body.message,
+        html: '<p>' + req.body.message + '</p>'
+    };
+    console.log(message);
+    if (req.body.human === "5") {
+        let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                user: "mrakus900@gmail.com",
+                pass: ""
+            }
+        });
+        // send mail with defined transport object
+        transporter.sendMail(message, (error, info) => {
+            if (error) {
+                return console.log(error);
+            }
+            console.log(info);
+            res.render('contacts-res', { title: 'Contacts:', message: "Лист віправлено!" })
+        });
+
+    } else {
+        res.render('contacts-res', { title: 'Contacts Us', message: "Ви мабуть робот!" });
+    }
 });
 
 module.exports = router;

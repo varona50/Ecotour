@@ -1,13 +1,43 @@
-<form action="" method="POST" class="form-horizontal" role="form">
-    <div class="form-group col-md-8">
-        <legend class="col-md-4">Реєстрація учасника</legend>
+<form class="form" role="form" id="form1" method="post" action="/contacts">
+    <div class="form-group">
+        <label for="name" class="col-sm-2 form-control-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="First & Last Name" value="">
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-2 form-control-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com" 
+        value="example@domain.com">
+    </div>
+    <div class="form-group">
+        <label for="message" class="col-sm-2 form-control-label">Message</label>
+        <textarea class="form-control" rows="4" name="message"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="human" class="col-sm-2 form-control-label">2 + 3 = ?</label>
+        <input type="text" class="form-control" id="human" name="human" placeholder="Your Answer">
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10 mx-sm-auto">
+            <button id="submit" name="submit" type="submit" class="btn btn-primary">Відправити
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10">
+            <!-- Will be used to display an alert to the user-->
+        </div>
+    </div>
+</form>
+
+{{!-- <form action="" method="POST" class="form-horizontal" role="form">
+    <div class="form-group">
+        <legend class="col-md-3 col-md-offset-2">Регистрация участника</legend>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="username" class="control-label col-md-4">
-            Як до Вас звертатися?
+    <div class="form-group">
+        <label for="username" class="control-label col-md-3 col-md-offset-2">
+            Как к Вам обращаться?
         </label>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <select class="form-control">
                 <option>Mr</option>
                 <option>Ms</option>
@@ -16,73 +46,75 @@
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="name" class="control-label col-md-4">
-            Прізвище та ім'я
+    <div class="form-group">
+        <label for="name" class="control-label col-md-3 col-md-offset-2">
+            Фамилия и имя
         </label>
-        <div class="form-group col-md-6">
-            <input class="form-control" type="text" placeholder="Марк Твен" id="name" required="required">
+        <div class="form-group col-md-4">
+            <input class="form-control" type="text" placeholder="Иванов Иван" id="name" required="required">
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="company" class="control-label col-md-4">
-            Компанія (навчальний заклад)
+    <div class="form-group">
+        <label for="company" class="control-label col-md-3 col-md-offset-2">
+            Компания (учебное заведение)
         </label>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <input class="form-control" type="text" placeholder="Google inc" id="company" required="required">
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="email" class="control-label col-md-4">
+    <div class="form-group">
+        <label for="email" class="control-label col-md-3 col-md-offset-2">
             E-mail
         </label>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <div class="input-group">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
                 </div>
-                <input type="email" name="email" id="email" class="form-control" placeholder="valve@gmail.com" required="required">
+                <input type="email" name="email" id="email" class="form-control" placeholder="demo@email.com" required="required">
             </div>
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="job" class="control-label col-md-4">
-            Посада
+    <div class="form-group">
+        <label for="job" class="control-label col-md-3 col-md-offset-2">
+            Должность
         </label>
-        <div class="form-group col-md-6">
-            <input class="form-control" type="text" placeholder="директор" id="job" required="required">
+        <div class="form-group col-md-4">
+            <input class="form-control" type="text" placeholder="зам. директора" id="job" required="required">
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="city" class="control-label col-md-4">
-            Місто
+    <div class="form-group">
+        <label for="city" class="control-label col-md-3 col-md-offset-2">
+            Город
         </label>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-4">
             <div class="input-group">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
                 </div>
-                <input type="text" name="city" id="city" class="form-control" placeholder="Київ" required="required">
+                <input type="text" name="city" id="city" class="form-control" placeholder="Киев" required="required">
             </div>
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <label for="question" class="control-label col-md-4">
-            Як нам зробити конференцію цікавіше?
+    <div class="form-group">
+        <label for="question" class="control-label col-md-3 col-md-offset-2">
+            Как нам сделать конференцию интересней?
         </label>
-        <div class="form-group col-md-6">
-            <textarea name="question" id="question" class="form-control" rows=" 3" required="required"></textarea>
+        <div class="form-group col-md-4">
+            <textarea name="question" id="question" class="form-control" rows="6" required="required"></textarea>
         </div>
     </div>
 
-    <div class="form-group col-md-8">
-        <div>
-            <button type="submit" class="btn btn-primary">Відправити</button>
+
+
+    <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-6">
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
-</form>
+</form> --}}
